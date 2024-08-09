@@ -36,8 +36,8 @@ export const templateRegistry = new TemplateRegistryImpl();
 templateRegistry.addDeviceTemplate('default', {
   render: (device) => html`
     <a-entity>
-      <a-box position="5 0.5 3" color="red"></a-box>
-      <a-text value="${device.$name}" position="0 1.5 0" align="center"></a-text>
+      <a-box position="3 0.5 3" color="red"></a-box>
+      <a-text value="${device.$name}" position="3 1.5 0" align="center"></a-text>
     </a-entity>
   `
 });
@@ -62,15 +62,15 @@ templateRegistry.addDeviceTemplate('light-sensor', {
 
 templateRegistry.addPropertyTemplate('default', {
   render: (property) => html`
-    <a-text value="${property.$name}: ${property.value}" position="0 0.5 0" align="center"></a-text>
+    <a-text value="${property.$name}: ${property.value}" position="3 2 0" align="center"></a-text>
   `
 });
 
 templateRegistry.addPropertyTemplate('temperature', {
   render: (property) => html`
     <a-entity>
-      <a-text value="${property.$name}: ${property.value}°C" position="0 0.5 0" align="center"></a-text>
-      <a-box position="0 0 0" depth="0.1" height="${0.1 * property.value}" width="0.5" color="${property.value > 30 ? 'red' : 'blue'}"></a-box>
+      <a-text value="${property.$name}: ${property.value}°C" position="3 2 0" align="center"></a-text>
+      <a-box position="3 2.5 0" depth="0.1" height="${0.1 * property.value}" width="0.5" color="${property.value > 30 ? 'red' : 'blue'}"></a-box>
     </a-entity>
   `
 });
