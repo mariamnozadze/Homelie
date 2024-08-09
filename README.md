@@ -1,6 +1,6 @@
-# Homelie: A-Frame IoT Visualization
+# Homélie: A-Frame IoT Visualization
 
-**Homelie** ( [ɔ.me.li] ) is a reactive A-Frame-based 3D visualization system for IoT devices, following the Homie convention for device representation.
+**Homélie** ( [ɔ.me.li] ) is a reactive A-Frame-based 3D visualization system for IoT devices, following the Homie convention for device representation.
 It provides a modular and extensible framework for visualizing IoT device data in a 3D environment.
 
 ## Features
