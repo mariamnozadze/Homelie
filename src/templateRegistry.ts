@@ -36,7 +36,7 @@ export const templateRegistry = new TemplateRegistryImpl();
 templateRegistry.addDeviceTemplate('default', {
   render: (device) => html`
     <a-entity>
-      <a-box position="0 0.5 0" color="red"></a-box>
+      <a-box position="5 0.5 3" color="red"></a-box>
       <a-text value="${device.$name}" position="0 1.5 0" align="center"></a-text>
     </a-entity>
   `
