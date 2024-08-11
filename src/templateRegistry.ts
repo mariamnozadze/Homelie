@@ -45,8 +45,13 @@ templateRegistry.addDeviceTemplate('default', {
 templateRegistry.addDeviceTemplate('temperature-sensor', {
   render: (device) => html`
     <a-entity>
-      <a-cylinder position="0 0.5 0" radius="0.5" height="1" color="blue"></a-cylinder>
-      <a-text value="${device.$name}" position="0 1.5 0" align="center"></a-text>
+      <a-cylinder 
+        position="0 0.5 0" 
+        radius="0.5" 
+        height="1" 
+        color="${device.$nodes.sensor.$properties.temperature.value > 25 ? 'red' : 'blue'}">
+      </a-cylinder>
+      <a-text value="${device.$name}" position="0 1.7 0" align="center"></a-text>
     </a-entity>
   `
 });
@@ -55,14 +60,17 @@ templateRegistry.addDeviceTemplate('light-sensor', {
   render: (device) => html`
     <a-entity>
       <a-sphere position="0 0.5 0" radius="0.5" color="yellow"></a-sphere>
-      <a-text value="${device.$name}" position="0 1.5 0" align="center"></a-text>
+      <a-text value="${device.$name}" position="0 2 0" align="center"></a-text>
     </a-entity>
   `
 });
 
 templateRegistry.addPropertyTemplate('default', {
   render: (property) => html`
-    <a-text value="${property.$name}: ${property.value}" position="3 2 0" align="center"></a-text>
+    <a-entity>
+      <a-text value="${property.$name}" position="3 2 0" align="center"></a-text>
+      <a-text value="${property.value}" position="3 1.5 0" align="center"></a-text>
+    </a-entity>
   `
 });
 
@@ -83,3 +91,5 @@ templateRegistry.addPropertyTemplate('light', {
     </a-entity>
   `
 });
+
+
